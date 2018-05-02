@@ -151,7 +151,7 @@ class AdImageMixin:
     ):
         if self[self.__class__.Field.id]:
             _, image_hash = self[self.__class__.Field.id].split(':')
-            account = AdAccount(fbid=self.get_parent_id_assured())
+            account = AdAccount(fbid=self.get_parent_id_assured(), api=self._api)
             params = {
                 'hashes': [
                     image_hash,
